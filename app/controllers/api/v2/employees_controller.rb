@@ -1,4 +1,4 @@
-class V2::EmployeesController < ApplicationController
+class Api::V2::EmployeesController < ApplicationController
   def index
     @employees = Employee.all
   end
