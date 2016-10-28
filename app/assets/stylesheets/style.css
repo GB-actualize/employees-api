@@ -1,0 +1,13 @@
+.ng-enter, .ng-move{
+  -webkit-animation: wobble 3s;
+  -moz-animation: wobble 3s;
+  -o-animation: wobble 3s;
+  animation: wobble 3s;
+}
+
+.ng-leave{
+  -webkit-animation: fadeOut 3s;
+  -moz-animation: fadeOut 3s;
+  -o-animation: fadeOut 3s;
+  animation: fadeOut 3s;
+}

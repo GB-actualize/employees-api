@@ -1,0 +1,43 @@
+<div ng-app="app">
+
+  <div ng-controller="employeeCtrl" ng-init="setup()">
+
+    <datalist id="names">
+      <option ng-repeat="employee in employees"> {{employee.first_name}}</option>
+    </datalist>
+
+    <input type="text" ng-model="nameFilter" list="names">
+
+    <table>
+      <tr>
+        <th ng-click="toggleOrder('first_name')"> First name </th>
+        <th ng-click="toggleOrder('last_name')"> Last name </th>
+      </tr>
+      <tr ng-repeat="employee in employees | orderBy: orderAttribute:descending"> 
+        <td> {{employee.first_name}} </td>
+        <td> {{employee.last_name}} </td>
+      </tr>
+    </table>
+    
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      };
+
+    </style>
+<!-- 
+    <div ng-repeat="employee in employees | filter: { first_name: nameFilter } | orderBy: orderAttribute:descending ">
+      <ul>
+        <li> <h2> {{employee.first_name}} {{employee.last_name}} </h2> </li>
+      </ul>
+    </div>
+    <div class="form">
+      <input type="text" ng-model="formFirstName" placeholder="First Name">
+      <input type="text" ng-model="formLastName" placeholder="Last Name">
+      <button ng-click="addEmployee(formFirstName, formLastName)">Submit</button>
+    <div>
+
+ -->
+
+  </div>
+</div>
